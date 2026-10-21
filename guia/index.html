@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>INEMA GOV 2027 — formação e método para prefeituras</title>
+<meta name="description" content="INEMA GOV 2027: a prefeitura forma a própria equipe e, em 90 dias, entrega uma solução interna e uma para o cidadão. Duas palestras, três meses, dez trilhas com cursos abertos e um kit de modelos.">
+<meta property="og:image" content="https://inematds.github.io/inema-gov/guia/assets/banner.jpg">
+<link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/inema-gov/guia/">
+<link rel="alternate" hreflang="en" href="https://inematds.github.io/inema-gov/guia/en/">
+<link rel="alternate" hreflang="es" href="https://inematds.github.io/inema-gov/guia/es/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0c10; --bg2:#14141b; --card:#16161e; --line:#272730;
+    --txt:#e9e9ee; --mut:#9a9aa6; --amb:#FACC15; --amb2:#f0c070; --sky:#38bdf8; --pro:#cbd5e1;
+    color-scheme:dark;
+  }
+  body.light{
+    --bg:#f6f7f9; --bg2:#eceef2; --card:#ffffff; --line:#e1e3ea;
+    --txt:#1a1a22; --mut:#5b5b68; --amb:#a16207; --amb2:#a16207; --sky:#0369a1; --pro:#b45309;
+    color-scheme:light;
+  }
+  body.light .hero .glow{opacity:.5}
+  body.light pre{background:#0e0e14;color:#d6d6e0}
+  body.light pre .c{color:#8a8a98}
+  body.light .btn{background:#FACC15}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Sora,sans-serif;line-height:1.15;margin:0}
+  a{color:var(--amb);text-decoration:none}
+  code,pre{font-family:"JetBrains Mono",monospace}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  .mut{color:var(--mut)} .amb{color:var(--amb)}
+  .chip{display:inline-block;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amb);font-weight:600;font-family:Sora}
+  nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);background:rgba(12,12,16,.78);border-bottom:1px solid var(--line)}
+  body.light nav{background:rgba(246,247,249,.85)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
+  nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb);white-space:nowrap}
+  nav .brand .emoji{font-size:1.25rem}
+  nav .sep{color:var(--mut);opacity:.45}
+  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .clubpro{display:inline-flex;align-items:center;gap:6px}
+  nav .links{margin-left:auto;display:flex;align-items:center;gap:18px;font-size:.92rem}
+  nav .links a.sec{color:var(--mut)} nav .links a.sec:hover{color:var(--txt)}
+  .lang{display:inline-flex;gap:2px;font-family:Sora;font-size:.78rem}
+  .lang a{color:var(--mut);padding:.2em .45em;border-radius:6px} .lang a.on{color:var(--amb);background:rgba(250,204,21,.12)}
+  .tgl{background:var(--bg2);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .tgl:hover{border-color:var(--amb)}
+  .btn{display:inline-block;background:var(--amb);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
+  .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  @media(max-width:900px){nav .links a.sec{display:none}}
+  @media(max-width:520px){nav .wrap{gap:8px;padding:8px 14px;height:auto;flex-wrap:wrap} nav .links{gap:8px;margin-left:0;width:100%;justify-content:space-between} nav .btn{padding:.45em .7em;font-size:.82rem} .tgl{width:34px;height:34px}}
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .glow{position:absolute;inset:-40% -20% auto auto;width:70%;height:600px;background:radial-gradient(closest-side,rgba(250,204,21,.18),transparent 70%);pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:74px 22px}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.025em}
+  .hero p.lead{font-size:1.18rem;color:var(--mut);margin:1.1em 0 1.6em;max-width:38ch}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000}
+  .hero figure img{width:100%;height:auto;display:block}
+  .resumo{padding:38px 0 34px;border-bottom:1px solid var(--line)}
+  .resumo p{font-size:1.12rem;line-height:1.7;max-width:74ch;margin:.55em 0 0}
+  @media(max-width:780px){.hero .wrap{grid-template-columns:1fr;padding:48px 22px}}
+  section{padding:62px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em}
+  section .sub{color:var(--mut);margin:.6em 0 2em;max-width:66ch}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;min-width:0}
+  .card h3{font-size:1.05rem;margin-bottom:.4em}
+  .card p{color:var(--mut);font-size:.92rem;margin:0}
+  .card ul{margin:.6em 0 0;padding-left:1.1em;font-size:.9rem;color:var(--mut)}
+  .card li{margin:.25em 0}
+  .card .gap{display:block;margin-top:.7em;font-size:.86rem;color:var(--txt);border-left:3px solid var(--amb);padding-left:.6em}
+  .num{display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:8px;background:rgba(250,204,21,.14);color:var(--amb);font-family:Sora;font-weight:800;font-size:.9rem;margin-bottom:.7em}
+  body.light .num{background:#FEF9C3}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0 28px}
+  .flow span{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:.45em .9em;font-size:.85rem;font-family:Sora;font-weight:600}
+  .flow .arr{color:var(--amb);border:none;background:none;padding:0 .1em}
+  .step{display:grid;grid-template-columns:46px minmax(0,1fr);gap:16px;margin-bottom:26px}
+  .step>div{min-width:0}
+  .step .b{width:46px;height:46px;border-radius:12px;background:#FACC15;color:#1a1206;font-family:Sora;font-weight:800;font-size:1.05rem;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:1.12rem;margin-bottom:.3em}
+  .step p{color:var(--mut);margin:.2em 0 .5em}
+  .step ul{margin:.3em 0 0;padding-left:1.1em;color:var(--mut)}
+  .step .out{display:inline-block;margin-top:.5em;font-size:.9rem;color:var(--txt)}
+  .tbl{width:100%;border-collapse:collapse;font-size:.92rem}
+  .tbl th,.tbl td{border-bottom:1px solid var(--line);padding:.6em .5em;text-align:left;vertical-align:top}
+  .tbl th{font-family:Sora;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);font-weight:600}
+  .tblw{overflow-x:auto}
+  .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--amb);border-radius:10px;padding:14px 16px;color:var(--mut);font-size:.93rem;margin-top:22px}
+  .phase{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .phase:last-child{border:none}
+  .phase .tag{flex:0 0 92px;font-family:Sora;font-weight:800;color:var(--amb)}
+  .phase .d{min-width:0}
+  .phase .d strong{display:block;margin-bottom:.2em}
+  .phase .d span{color:var(--mut);font-size:.92rem}
+  footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:4px}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top"><span class="emoji">🏛️</span> INEMA GOV</a>
+  <span class="sep">|</span>
+  <span class="clubpro">
+    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+    <span class="sep">-</span>
+    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+  </span>
+  <div class="links">
+    <a class="sec" href="#caminho">Caminho</a>
+    <a class="sec" href="#trilhas">Trilhas</a>
+    <a class="sec" href="#kit">Kit</a>
+    <a class="sec" href="#pilotos">Pilotos</a>
+    <span class="lang"><a class="on" href="./">PT</a><a href="en/">EN</a><a href="es/">ES</a></span>
+    <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
+    <a class="btn" href="https://github.com/inematds/inema-gov" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div>
+      <span class="chip">INEMA GOV 2027 · prefeituras</span>
+      <h1>A prefeitura que <span class="amb">aprende</span> transforma o que já faz.</h1>
+      <p class="lead">Em 90 dias, a equipe da prefeitura se forma, melhora um processo interno e entrega uma solução simples para o cidadão.</p>
+      <div class="cta">
+        <a class="btn" href="#caminho">Ver o caminho</a>
+        <a class="btn ghost" href="#trilhas">Ver a formação</a>
+      </div>
+    </div>
+    <figure><img src="assets/banner.jpg" alt="INEMA GOV 2027 — prefeitura que aprende: formação e método para prefeituras"></figure>
+  </div>
+</header>
+
+<section id="resumo" class="resumo"><div class="wrap">
+  <span class="chip">Em resumo</span>
+  <p>O INEMA GOV é um programa de formação aplicada para prefeituras. Gestores, servidores e a equipe de TI aprendem a mapear processos reais, simplificar a rotina e construir soluções digitais pequenas, usando inteligência artificial com segurança. Em três meses saem duas soluções testadas: uma para o trabalho interno e outra para o cidadão. Aqui estão o método, as trilhas com cursos abertos do INEMA, os modelos para preencher e o plano dos pilotos.</p>
+</div></section>
+
+<section id="oque"><div class="wrap">
+  <span class="chip">O que é</span>
+  <h2>Não é vender curso nem sistema. É deixar a capacidade dentro da prefeitura.</h2>
+  <p class="sub">Sua prefeitura não precisa começar comprando mais software. Precisa aprender a transformar o que já faz.</p>
+  <figure style="margin:0 0 26px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="assets/banner-grade.jpg" alt="Duas palestras de abertura, mês 1 aprender, mês 2 solução interna, mês 3 solução ao cidadão, 10 trilhas de formação e kit de modelos" loading="lazy" style="width:100%;display:block"></figure>
+  <div class="grid g3">
+    <div class="card"><h3>🎓 Formação aplicada</h3><p>Cada secretaria leva processos reais para as oficinas. A aula acontece em cima do trabalho de verdade, não de exemplo inventado.</p></div>
+    <div class="card"><h3>🛠️ Duas entregas em 90 dias</h3><p>Uma solução interna (mês 2) e uma solução para o cidadão (mês 3), pequenas, testadas e com responsável definido.</p></div>
+    <div class="card"><h3>🏛️ Capacidade que fica</h3><p>Institucional, não partidário. Multiplicadores, documentação e biblioteca compartilhada continuam depois da troca de gestão.</p></div>
+  </div>
+</div></section>
+
+<section id="fluxo"><div class="wrap">
+  <span class="chip">Método</span>
+  <h2>Seis passos, sempre na mesma ordem.</h2>
+  <p class="sub">Primeiro entender e simplificar o processo. Só depois pensar em tecnologia.</p>
+  <div class="flow">
+    <span>Mapear</span><span class="arr">→</span>
+    <span>Melhorar</span><span class="arr">→</span>
+    <span>Construir</span><span class="arr">→</span>
+    <span>Validar</span><span class="arr">→</span>
+    <span>Operar</span><span class="arr">→</span>
+    <span>Medir e melhorar</span>
+  </div>
+  <div class="grid g4">
+    <div class="card"><div class="num">1</div><h3>Liderança</h3><p>Prefeito, vice, secretários e cargos em comissão. Visão, prioridades, governança e como cobrar resultado. Não precisam programar.</p></div>
+    <div class="card"><div class="num">2</div><h3>Chefias e gestores de processo</h3><p>O grupo central. Mapeiam fluxos, acham gargalos, redesenham o trabalho, especificam e supervisionam.</p></div>
+    <div class="card"><div class="num">3</div><h3>Servidores</h3><p>Quem atende o cidadão e conhece o problema real. Uso prático da IA e participação direta nas melhorias.</p></div>
+    <div class="card"><div class="num">4</div><h3>TI e multiplicadores</h3><p>Integração, automação, agentes, segurança, testes, implantação e manutenção.</p></div>
+  </div>
+  <p class="note">Princípio: não capacitar só a TI. O conhecimento de quem executa o trabalho é indispensável para resolver o problema certo.</p>
+</div></section>
+
+<section id="caminho"><div class="wrap">
+  <span class="chip">O caminho · passo a passo</span>
+  <h2>Duas palestras, três meses, três entregas.</h2>
+  <p class="sub">Um encontro presencial regional por mês, com prática e troca entre municípios, e atividades online entre os encontros.</p>
+
+  <div class="step"><div class="b">A</div><div>
+    <h3>Palestra A — liderança (4 h)</h3>
+    <p>O município na era da IA · como transformar a gestão · o método INEMA GOV · mobilização.</p>
+    <span class="out">Saída: apoio formal, responsáveis designados e problemas pré-selecionados. <a href="https://github.com/inematds/inema-gov/blob/main/kit/00-termo-patrocinio.md">Termo de patrocínio</a></span>
+  </div></div>
+
+  <div class="step"><div class="b">B</div><div>
+    <h3>Palestra B — servidores (4 h)</h3>
+    <p>IA sem complicação · problemas reais da rotina · da ideia à solução (demonstração ao vivo) · oficina de engajamento.</p>
+    <span class="out">Saída: servidores mobilizados, lista de dores e grupos de trabalho formados.</span>
+  </div></div>
+
+  <div class="step"><div class="b">1</div><div>
+    <h3>Mês 1 — Aprender a transformar</h3>
+    <ul>
+      <li>Formação em IA aplicada à gestão municipal (trilhas 1 a 5).</li>
+      <li>Mapear processos reais e listar os sistemas já usados.</li>
+      <li>Escolher dois projetos pequenos: um interno, um para o cidadão.</li>
+    </ul>
+    <span class="out">Entrega: diagnóstico, processos mapeados, projetos priorizados e protótipos.</span>
+  </div></div>
+
+  <div class="step"><div class="b">2</div><div>
+    <h3>Mês 2 — Melhorar o trabalho da prefeitura</h3>
+    <ul>
+      <li>Construir com os servidores a solução interna (ex.: pedidos de manutenção, solicitações de RH).</li>
+      <li>Testar com usuários reais e ajustar o processo, não só a tela.</li>
+      <li>Documentar operação, responsável e limites.</li>
+    </ul>
+    <span class="out">Entrega: solução interna testada e validada pela equipe.</span>
+  </div></div>
+
+  <div class="step"><div class="b">3</div><div>
+    <h3>Mês 3 — Facilitar a vida do cidadão</h3>
+    <ul>
+      <li>Construir a solução para a população (ex.: acompanhar solicitações, calendário de coleta).</li>
+      <li>Validar linguagem simples, acessibilidade, privacidade e canal de suporte.</li>
+      <li>Apresentar os resultados no encontro regional.</li>
+    </ul>
+    <span class="out">Entrega: solução testada e, se aprovada, publicada; relatório e plano de continuidade.</span>
+  </div></div>
+
+  <div class="step"><div class="b">12</div><div>
+    <h3>Do 4º ao 12º mês — continuar evoluindo</h3>
+    <p>No programa anual: um encontro por mês, novos ciclos de melhoria, trilhas 6 a 10 com mais profundidade, multiplicadores conduzindo o próximo ciclo e a biblioteca compartilhada crescendo.</p>
+  </div></div>
+
+  <div class="tblw"><table class="tbl">
+    <thead><tr><th>Metas para planejar, por município</th><th>Faixa</th></tr></thead>
+    <tbody>
+      <tr><td>Servidores capacitados</td><td>30–60</td></tr>
+      <tr><td>Processos mapeados</td><td>10–20</td></tr>
+      <tr><td>Melhorias priorizadas</td><td>3–5</td></tr>
+      <tr><td>Soluções validadas</td><td>2 (uma interna, uma ao cidadão)</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">São metas para planejar, não garantias. Mudam com o porte, a maturidade digital, o acesso aos sistemas e as aprovações. Nada de sistema completo nem integração complexa em 90 dias.</p>
+</div></section>
+
+<section id="trilhas"><div class="wrap">
+  <span class="chip">Formação</span>
+  <h2>Dez trilhas. A maioria já tem curso aberto no INEMA.</h2>
+  <p class="sub">O coração são as trilhas 3 e 4: mapear e melhorar processos. Onde ainda não existe curso para o setor público, está escrito "lacuna" — é ali que entram os cursos novos e os pilotos.</p>
+  <div class="grid g2">
+    <div class="card"><h3>1 · IA no serviço público</h3><p>Fundamentos, aplicações e limites. Todos os públicos.</p><ul>
+      <li><a href="https://inematds.github.io/do-chat-ao-agente-v72/">Do chat ao agente · visão geral</a></li>
+      <li><a href="https://inematds.github.io/curso-agente-sob-controle/">Agente sob controle v6.2</a></li>
+      <li><a href="https://inematds.github.io/letramento-ia-eua/guia/">Letramento em IA nos EUA: o que o governo faz</a></li></ul>
+      <span class="gap">Lacuna: exemplos e limites da prefeitura brasileira.</span></div>
+    <div class="card"><h3>2 · Gestão da transformação</h3><p>Liderança, prioridades e indicadores.</p><ul>
+      <li><a href="https://inematds.github.io/gestao-ia-base-v72/">Gestão de IA 2027 · Base</a></li>
+      <li><a href="https://inematds.github.io/gestao-ia-pessoas-v72/">Gestão de IA 2027 · Pessoas</a></li>
+      <li><a href="https://inematds.github.io/segunda-opiniao/">Segunda Opinião — IA para gestores</a></li></ul>
+      <span class="gap">Lacuna: a palestra A em formato de aula.</span></div>
+    <div class="card"><h3>3 · Mapeamento de processos</h3><p>Entrevistas, fluxos, gargalos e regras.</p><ul>
+      <li><a href="https://inematds.github.io/gestao-ia-processos-v72/">Gestão de IA 2027 · Processos</a></li>
+      <li><a href="https://inematds.github.io/pffia/">Arquiteto de Trabalho com IA</a></li>
+      <li><a href="https://inematds.github.io/gestoria/guia/">Gestoria — laboratório de processos</a></li></ul></div>
+    <div class="card"><h3>4 · Redesenho do trabalho</h3><p>Simplificar, padronizar e eliminar etapas.</p><ul>
+      <li><a href="https://inematds.github.io/crie-seu-metodo-v72/">Crie seu método</a></li>
+      <li><a href="https://inematds.github.io/gestao-ia-processos-v72/">Gestão de IA 2027 · Processos</a></li></ul>
+      <span class="gap">Lacuna: casos municipais de redesenho — saem dos pilotos.</span></div>
+    <div class="card"><h3>5 · IA na rotina administrativa</h3><p>Documentos, pesquisas, planilhas e relatórios.</p><ul>
+      <li><a href="https://inematds.github.io/oswork-v62/">OSWork v6.2</a></li>
+      <li><a href="https://inematds.github.io/do-chat-ao-agente-terminal-v72/">Do chat ao agente · terminal</a></li></ul>
+      <span class="gap">Lacuna: a mesma rotina só no navegador, sem terminal.</span></div>
+    <div class="card"><h3>6 · Automação e agentes</h3><p>Rotinas, supervisão e integrações.</p><ul>
+      <li><a href="https://inematds.github.io/gestao-ia-agentes-v72/">Gestão de IA 2027 · Agentes</a></li>
+      <li><a href="https://inematds.github.io/curso-7pa/">Gestão de Agentes — os 7 princípios</a></li>
+      <li><a href="https://inematds.github.io/do-chat-ao-agente-filas-v72/">Do chat ao agente · filas</a></li>
+      <li><a href="https://inematds.github.io/criaagentes/guia/">criaagentes — atendente que nunca inventa</a></li></ul></div>
+    <div class="card"><h3>7 · Criação rápida de sistemas</h3><p>Protótipos e testes.</p><ul>
+      <li><a href="https://inematds.github.io/vibe-coding/">Vibe Coding na Prática</a></li>
+      <li><a href="https://inematds.github.io/oswork-quick/">OSWork Quick — do terminal à página no ar</a></li>
+      <li><a href="https://inematds.github.io/agentic-app/guia/">agentic-app — aprovação e política testada</a></li>
+      <li><a href="https://inematds.github.io/sanmartin/">San Martín — redesign de site municipal</a></li></ul></div>
+    <div class="card"><h3>8 · Sistemas e dados existentes</h3><p>ERP, APIs, interoperabilidade e cadastros.</p><ul>
+      <li><a href="https://inematds.github.io/FDB/">Fundamentos de Banco de Dados</a></li>
+      <li><a href="https://inematds.github.io/engdadosai">Engenharia de Dados com IA</a> (só em português)</li></ul>
+      <span class="gap">Lacuna principal: integração com os sistemas que a prefeitura já usa.</span></div>
+    <div class="card"><h3>9 · Segurança e governança</h3><p>LGPD, auditoria, acessos e riscos.</p><ul>
+      <li><a href="https://inematds.github.io/gestao-ia-governanca-v72/">Gestão de IA 2027 · Governar, medir e evoluir</a></li>
+      <li><a href="https://inematds.github.io/loop-r-eng-seguranca-v72/">LOOP-R Engenharia 4 · Segurança</a></li>
+      <li><a href="https://inematds.github.io/triade-letal/guia/">Tríade Letal — checklist de vazamento</a></li></ul>
+      <span class="gap">Lacuna: LGPD e Lei 14.133 na prática da prefeitura.</span></div>
+    <div class="card"><h3>10 · Melhoria contínua</h3><p>Indicadores, avaliação e LOOP-R.</p><ul>
+      <li><a href="https://inematds.github.io/loop-r-eng-base-v72/">LOOP-R Engenharia 0 · Base</a></li>
+      <li><a href="https://inematds.github.io/iacultivada-v72/">IA Cultivada</a></li>
+      <li><a href="https://inematds.github.io/curso-rsi/">RSI v6.2 — ciclos de melhoria</a></li></ul></div>
+  </div>
+</div></section>
+
+<section id="labs"><div class="wrap">
+  <span class="chip">Laboratórios por secretaria</span>
+  <h2>Cada secretaria leva um processo real.</h2>
+  <p class="sub">Não são dez sistemas novos. Cada equipe escolhe e resolve processos de alto impacto e baixo risco.</p>
+  <div class="tblw"><table class="tbl">
+    <thead><tr><th>Área</th><th>Exemplos de projeto</th></tr></thead>
+    <tbody>
+      <tr><td>Administração</td><td>Protocolo digital, tramitação de documentos, controle de tarefas</td></tr>
+      <tr><td>Recursos humanos</td><td>Férias, solicitações internas, integração de servidores, consulta a normas</td></tr>
+      <tr><td>Compras e licitações</td><td>Organização de demandas, conferência documental, acompanhamento contratual</td></tr>
+      <tr><td>Obras e infraestrutura</td><td>Pedidos de manutenção, ordens de serviço, fiscalização</td></tr>
+      <tr><td>Educação</td><td>Administração escolar, documentos, comunicação com famílias</td></tr>
+      <tr><td>Saúde</td><td>Rotinas administrativas, organização de filas, solicitações</td></tr>
+      <tr><td>Assistência social</td><td>Fluxos de atendimento, documentos, acompanhamento</td></tr>
+      <tr><td>Fazenda e tributação</td><td>Atendimento, consultas, conferências administrativas</td></tr>
+      <tr><td>Meio ambiente</td><td>Protocolos, vistorias, solicitações</td></tr>
+      <tr><td>Gabinete e ouvidoria</td><td>Triagem, atendimento ao cidadão, relatórios</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Benefícios sociais, saúde, tributos, sanções e direitos dos cidadãos exigem avaliação jurídica, dados de qualidade, supervisão humana e controles adicionais. Não se automatizam sem esses cuidados.</p>
+</div></section>
+
+<section id="kit"><div class="wrap">
+  <span class="chip">Kit de modelos</span>
+  <h2>Oito modelos para copiar e preencher.</h2>
+  <p class="sub">Texto simples, para imprimir ou colar num documento da prefeitura. Os pilotos vão ajustar cada um.</p>
+  <div class="grid g4">
+    <a class="card" href="https://github.com/inematds/inema-gov/blob/main/kit/00-termo-patrocinio.md"><h3>00 · Termo de patrocínio</h3><p>Responsáveis, secretarias e tempo autorizado.</p></a>
+    <a class="card" href="https://github.com/inematds/inema-gov/blob/main/kit/01-diagnostico-maturidade.md"><h3>01 · Diagnóstico de maturidade</h3><p>12 perguntas de 0 a 3 para escolher por onde começar.</p></a>
+    <a class="card" href="https://github.com/inematds/inema-gov/blob/main/kit/02-ficha-mapeamento-processo.md"><h3>02 · Ficha de processo</h3><p>Como o trabalho acontece hoje e onde trava.</p></a>
+    <a class="card" href="https://github.com/inematds/inema-gov/blob/main/kit/03-criterios-selecao-projetos.md"><h3>03 · Seleção dos projetos</h3><p>Filtro e pontuação para escolher os dois.</p></a>
+    <a class="card" href="https://github.com/inematds/inema-gov/blob/main/kit/04-criterios-aceite.md"><h3>04 · Critérios de aceite</h3><p>"Pronto quando", escrito antes de construir.</p></a>
+    <a class="card" href="https://github.com/inematds/inema-gov/blob/main/kit/05-checklist-lgpd-seguranca.md"><h3>05 · LGPD e segurança</h3><p>Dados, acesso, supervisão e publicação.</p></a>
+    <a class="card" href="https://github.com/inematds/inema-gov/blob/main/kit/06-documento-continuidade.md"><h3>06 · Continuidade</h3><p>Mantenedor, acessos, suporte e limites.</p></a>
+    <a class="card" href="https://github.com/inematds/inema-gov/blob/main/kit/07-ficha-biblioteca.md"><h3>07 · Biblioteca</h3><p>Para outra prefeitura reaproveitar.</p></a>
+  </div>
+  <p class="note">Regra da biblioteca: compartilhar método e artefatos autorizados, nunca dados municipais ou pessoais sem base legal e controles. Este material organiza pontos de atenção e não substitui a análise da assessoria jurídica de cada município.</p>
+</div></section>
+
+<section id="pilotos"><div class="wrap">
+  <span class="chip">Pilotos · a montar</span>
+  <h2>Um piloto para cada fase e cada solução.</h2>
+  <p class="sub">Testar o método antes de levar a outras prefeituras. Nenhum piloto está montado ainda; esta é a lista de trabalho. Depois, três prefeituras de portes diferentes e o kit nacional de replicação.</p>
+  <div class="phase"><div class="tag">P1–P2</div><div class="d"><strong>Abertura</strong><span>Palestra A (liderança) e palestra B (servidores): roteiro de 4 h, slides e a demonstração ao vivo "da ideia à solução".</span></div></div>
+  <div class="phase"><div class="tag">P3–P4</div><div class="d"><strong>Mês 1</strong><span>Oficina de mapeamento com a ficha 02 e o diagnóstico 01; seleção dos dois projetos com os critérios 03.</span></div></div>
+  <div class="phase"><div class="tag">P5–P6</div><div class="d"><strong>Mês 2 · solução interna</strong><span>Pedidos de manutenção urbana e solicitações de RH, como soluções de referência.</span></div></div>
+  <div class="phase"><div class="tag">P7–P8</div><div class="d"><strong>Mês 3 · solução ao cidadão</strong><span>Registro e acompanhamento de solicitações; calendário de coleta e consulta de serviços.</span></div></div>
+  <div class="phase"><div class="tag">P9–P10</div><div class="d"><strong>4º ao 12º mês</strong><span>Formação de multiplicadores e biblioteca compartilhada com as primeiras soluções.</span></div></div>
+  <p class="note">Plano completo, com o "pronto quando" de cada piloto: <a href="https://github.com/inematds/inema-gov/blob/main/pilotos/README.md">pilotos/README.md</a>. Método em detalhe: <a href="https://github.com/inematds/inema-gov/tree/main/metodo">metodo/</a>.</p>
+</div></section>
+
+<footer>
+  <div class="wrap">
+    <div class="pill">Formação aplicada</div><div class="pill">Gestão pública</div><div class="pill">IA com segurança</div>
+    <p style="margin-top:18px">INEMA GOV 2027 · documento de concepção, metas sujeitas à validação nos pilotos ·
+      <a href="https://github.com/inematds/inema-gov">inematds/inema-gov</a> ·
+      <a href="https://eventos.inema.pro/inema-gov/">eventos.inema.pro/inema-gov</a> ·
+      <a href="https://inema.club">INEMA.CLUB</a></p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var KEY='inema-gov-theme';
+    var b=document.body, t=document.getElementById('themeToggle');
+    try{ if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; } }catch(e){}
+    t.addEventListener('click',function(){
+      var light=b.classList.toggle('light');
+      t.textContent=light?'☀️':'🌙';
+      try{ localStorage.setItem(KEY, light?'light':'dark'); }catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>
